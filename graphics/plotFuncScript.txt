@@ -1,0 +1,12 @@
+
+set terminal pngcairo  background "#000000" enhanced font "arial,8" fontscale 1.0 size 640, 480 
+set border lc rgb 'white'
+set title "{/:Bold Curve Fit}" tc rgb "orange"
+set xrange [-5:5]
+set yrange [-1.5:1.5]
+set xtics (-4.0, -3.0, -2.0, 0, 2.0, 3.0, 4.0)
+set grid lc rgb 'white'
+
+set key textcolor rgb "white"
+plot 'graficos/funcDados.dat' using 1:2 title "Func" with line lw 2 lc rgb "blue", \
+'graficos/poliDados.dat' using 1:2 title "Fit Curve" with line lw 2 dt 2 lc rgb "green"
