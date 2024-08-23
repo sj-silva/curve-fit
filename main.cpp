@@ -31,7 +31,7 @@ int main() {
 	std::string funcPath = basePath + "funcData.dat";
 	std::string polyPath = basePath + "polyData.dat";
 	plot::CreateData(g, -5, 5, funcPath);
-
+	
 	
 	auto polinomio = std::bind(&polynomial, std::placeholders::_1, std::ref(DEGREE));
 	polyCoeff = fit::CreateCoefficients(g, DEGREE, -5, 5);
