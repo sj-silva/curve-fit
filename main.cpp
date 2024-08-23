@@ -29,10 +29,9 @@ int main() {
 
 	std::string basePath = "graphics/";
 	std::string funcPath = basePath + "funcData.dat";
-	std::string polyPath = basePath + "poliData.dat";
+	std::string polyPath = basePath + "polyData.dat";
 	plot::CreateData(g, -5, 5, funcPath);
 
-	
 	
 	auto polinomio = std::bind(&polynomial, std::placeholders::_1, std::ref(DEGREE));
 	polyCoeff = fit::CreateCoefficients(g, DEGREE, -5, 5);
@@ -43,7 +42,7 @@ int main() {
 
 	plot::CreateData(polinomio, -5, 5, polyPath);
 	plot::CreateFigure(DEGREE);	
-	
+	/*
 	cv::Size frame_size(640, 480);
 	int frames_per_second = 4;
 	cv::VideoWriter video("video/curve_animation.mp4", cv::VideoWriter::fourcc('D', 'I', 'V', 'X'),
@@ -58,7 +57,7 @@ int main() {
 
 	video.release();
 
-
+	*/
 	std::string imagePath = basePath+"/result" + std::to_string(DEGREE) + ".png";
 	cv::Mat image = cv::imread(imagePath);
 

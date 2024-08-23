@@ -11,12 +11,12 @@ namespace plot {
 
 			FILE* pipe = _popen("gnuplot", "w");
 			
-			std::string nome_arq = "graficos/result" + std::to_string(degree) + ".png";
-			std::string destino = "set out '" + nome_arq + "' \n";
+			std::string fileName = "graphics/result" + std::to_string(degree) + ".png";
+			std::string destino = "set out '" + fileName + "' \n";
 
 			fprintf(pipe, "reset session\n");
 			fprintf(pipe, destino.c_str());
-			fprintf(pipe, "load 'graficos/plotFuncScript.txt'\n");
+			fprintf(pipe, "load 'graphics/plotFuncScript.txt'\n");
 
 			_pclose(pipe);
 		}
